@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+/*
+
+--- 01 TYPOGRAPHY SYSTEM ---
+
+- Font size (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1 
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+Large: 1.8
+
+-Letter spacing
+-0.5px
+0.75px
+
+--- 02 COLOR SYSTEM ---
+
+- Primary: #e67e22
+- Tints: 
+#fbf2e9
+#fae5d3
+#eb984e
+- Shades:
+#cf711f
+#45260a
+- Accents:
+- Greys
+#888
+#767676 (lightest grey allowed on #fff)
+#6f6f6f (lightest grey allowed on #fbf2e9)
+#555
+#333
+
+
+--- 05 SHADOWS ---
+
+--- 06 BORDERS-RADIUS ---
+
+Default: 9px
+Medium: 11px
+
+--- 07 WHITESPACE ---
+
+- SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+:root {
+  --primary-color: #ffa318;
+  --primary-color-tint: #ffb546;
+  --primary-color-tint-2: #ffdaa3;
+  --primary-color-tint-3: #fff6e8;
+  --text-color-nav: #333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  /* 1 rem = 10 px */
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #434343;
+  background-color: #e5dfd1;
+}
+
+.container {
+  padding: 12rem 0 8rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-heading-container {
+  margin-bottom: 10rem;
+}
+
+.heading-primary {
+  color: #fff;
+  font-weight: 300;
+  font-size: 9.6rem;
+  line-height: 1.2;
+}
+
+.heading-secondary {
+  font-size: 3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  justify-self: center;
+}
+
+/* .heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+} */
+
+.subheading {
+  font-size: 1.4rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  justify-self: center;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+
+  /* Only necessary for .btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  /* Put transition on original "state"*/
+  /* transition: background-color 0.3s; */
+  transition: all 0.3s;
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: var(--primary-color-tint);
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fff;
+  /* border: 3px solid #fff; */
+
+  /* Trick to add border inside*/
+  box-shadow: inset 0 0 0 1px var(--primary-color);
+}
+
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+}
+
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+}
+
+.grid--2--cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3--cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4--cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--5--cols {
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+.grid--center-v {
+  align-items: center;
+}
+
+/* HELPER/SETTING CLASSES*/
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
+
+.center-text {
+  text-align: center;
+}
