@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  const prevent = (e) => e.preventDefault(); // 解决 href="#" 的 a11y 警告
+  const prevent = (e) => e.preventDefault(); 
 
   return (
     <footer className="footer">

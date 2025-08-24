@@ -2,39 +2,32 @@ import React, { useEffect } from "react";
 
 export default function Header() {
   useEffect(() => {
-  const header = document.querySelector(".header");
-  if (!header) return;
+    const headerEl = document.querySelector(".header");
+    const heroEl = document.querySelector("#hero");
+    if (!headerEl || !heroEl) return;
 
-  const SCROLL_TRIGGER = 120;
-
-  const onScroll = () => {
-    if (window.scrollY > SCROLL_TRIGGER) header.classList.add("active");
-    else header.classList.remove("active");
-  };
-
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
-  return () => window.removeEventListener("scroll", onScroll);
-}, []);
+    const obs = new IntersectionObserver(
+      ([ent]) => headerEl.classList.toggle("active", !ent.isIntersecting),
+      { root: null, threshold: 0, rootMargin: "-280px 0px 0px 0px" }
+    );
+    obs.observe(heroEl);
+    return () => obs.disconnect();
+  }, []);
 
   return (
     <header className="header">
       <div className="header-container">
-        <nav className="main-nav">
+        <nav className="main-nav" aria-label="Primary">
           <ul className="main-nav-list">
-            <li><a href="#hero"      className="nav-link main-nav-link">Home</a></li>
-            <li><a href="#products"  className="nav-link main-nav-link">Products</a></li>
-            <li><a href="#about"     className="nav-link main-nav-link">Our story</a></li>
+            <li><a href="#hero" className="nav-link main-nav-link">Home</a></li>
+            <li><a href="#products" className="nav-link main-nav-link">Products</a></li>
+            <li><a href="#about" className="nav-link main-nav-link">Our story</a></li>
           </ul>
         </nav>
 
         <p className="logo">Mimos</p>
 
-        <a href="#contact" className="nav-link main-nav-link nav-cta">
-          Contact&nbsp;Us
-          <ion-icon name="paw" className="icon-nav-cta"></ion-icon>
-          <span className="cta-bg"></span>
-        </a>
+        <a href="#contact" className="nav-link main-nav-link nav-cta">Contact</a>
       </div>
     </header>
   );

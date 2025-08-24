@@ -1,6 +1,5 @@
 import React from "react";
 
-// 每列的图片清单（与您原始 HTML 保持一致）
 const COLS = {
   c1: ["1.jpg", "2.jpg", "3.jpg", "4.jpg"],
   c2: ["5.jpg", "6.jpg", "7.jpg"],

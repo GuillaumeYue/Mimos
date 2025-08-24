@@ -59,7 +59,7 @@ export default function Featured() {
           <div className="display-box">
             <div
               ref={containerRef}
-              className="products-container"
+              className="products-container" id="products-track"
               style={{ transform: `translateX(-${idx * cardW}px)` }}
             >
               {products.map((p) => (
@@ -86,8 +86,8 @@ export default function Featured() {
           target="_blank"
           rel="noreferrer"
         >
-          See all products
-          <ion-icon className="view-icon" name="arrow-forward"></ion-icon>
+          See all products{" "}
+          <ion-icon className="view-icon" name="arrow-forward"></ion-icon>{" "}
         </a>
       </div>
     </section>

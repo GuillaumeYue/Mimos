@@ -11,7 +11,6 @@ export default function About() {
 
         <div className="about-content-container">
           <div className="about-img-box">
-            {/* 资源来自 public/assets */}
             <img
               className="about-img"
               src="/assets/about-img.png"
